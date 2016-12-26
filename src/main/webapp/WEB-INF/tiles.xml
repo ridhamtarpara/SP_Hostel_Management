@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- Index Tiles Start -->
+
+	<definition name="index" template="/WEB-INF/layout/frontEnd.jsp">
+		<put-attribute name="footer" value="/WEB-INF/layout/frontEndFooter.jsp" />
+		<put-attribute name="title" value="Saurastra Patel Kelavani Mandal" />
+		<put-attribute name="head" value="/WEB-INF/layout/includeup.jsp" />
+		<put-attribute name="preloader" value="/WEB-INF/jsp/preloader.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/frontEndHeader.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/includedown.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+	</definition>
+
+	<!-- <definition name="index" template="/WEB-INF/jsp/index.jsp"></definition> -->
+
+
+	<!-- Index Tiles End -->
+
+	<!-- Services Start -->
+
+	<definition name="services" template="/WEB-INF/layout/basic1.jsp">
+		<put-attribute name="head" value="/WEB-INF/layout/includeup.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/frontEndHeader.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/includedown.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/layout/frontEndFooter.jsp" />
+	</definition>
+
+	<definition name="aboutus" extends="services">
+		<put-attribute name="title" value="About Us" />
+		<put-attribute name="navbar" value="" />
+		<put-attribute name="body" value="/WEB-INF/jsp/aboutus.jsp" />
+	</definition>
+
+	<!-- Facilities Start -->
+
+	<definition name="facilities" extends="services">
+		<put-attribute name="title" value="Facilities" />
+		<put-attribute name="navbar" value="/WEB-INF/jsp/facility.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/rooms.jsp" />
+		<put-attribute name="tree" value="facilities" cascade="true" />
+		<put-attribute name="current" value="facilities"
+			cascade="true" />
+	</definition>
+
+	<definition name="diningHall" extends="facilities">
+		<put-attribute name="body" value="/WEB-INF/jsp/dining.jsp" />
+		<put-attribute name="current" value="diningHall"
+			cascade="true" />
+	</definition>
+
+	<definition name="gym" extends="facilities">
+		<put-attribute name="body" value="/WEB-INF/jsp/gym.jsp" />
+		<put-attribute name="current" value="gym" cascade="true" />
+	</definition>
+
+	<definition name="tuition" extends="facilities">
+		<put-attribute name="body" value="/WEB-INF/jsp/tuition.jsp" />
+		<put-attribute name="current" value="tuition" cascade="true" />
+	</definition>
+
+	<definition name="library" extends="facilities">
+		<put-attribute name="body" value="/WEB-INF/jsp/library.jsp" />
+		<put-attribute name="current" value="library" cascade="true" />
+	</definition>
+
+	<definition name="otherFacility" extends="facilities">
+		<put-attribute name="body" value="/WEB-INF/jsp/otherFacility.jsp" />
+		<put-attribute name="current" value="otherFacility"
+			cascade="true" />
+	</definition>
+
+	<!-- Facilities End -->
+	<!-- activities Start -->
+
+	<definition name="activities" extends="services">
+		<put-attribute name="title" value="activities" />
+		<put-attribute name="navbar" value="/WEB-INF/jsp/activities.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/sports.jsp" />
+		<put-attribute name="tree" value="activities" cascade="true" />
+		<put-attribute name="current" value="activities"
+			cascade="true" />
+	</definition>
+
+	<definition name="independenceDay" extends="activities">
+		<put-attribute name="body" value="/WEB-INF/jsp/independence.jsp" />
+		<put-attribute name="current" value="independenceDay"
+			cascade="true" />
+	</definition>
+
+	<definition name="navratri" extends="activities">
+		<put-attribute name="body" value="/WEB-INF/jsp/navratri.jsp" />
+		<put-attribute name="current" value="navratri" cascade="true" />
+	</definition>
+
+	<definition name="republicDay" extends="activities">
+		<put-attribute name="body" value="/WEB-INF/jsp/republic.jsp" />
+		<put-attribute name="current" value="republicDay"
+			cascade="true" />
+	</definition>
+
+	<definition name="satraPrarambh" extends="activities">
+		<put-attribute name="body" value="/WEB-INF/jsp/satr.jsp" />
+		<put-attribute name="current" value="satraPrarambh"
+			cascade="true" />
+	</definition>
+
+	<!-- activities End -->
+	<!-- trust Start -->
+
+	<definition name="trust" extends="services">
+		<put-attribute name="title" value="activities" />
+		<put-attribute name="navbar" value="/WEB-INF/jsp/trust.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/trusteelist.jsp" />
+		<put-attribute name="tree" value="trust" cascade="true" />
+		<put-attribute name="current" value="trust" cascade="true" />
+	</definition>
+
+	<definition name="reports" extends="trust">
+		<put-attribute name="title" value="Reports" />
+		<put-attribute name="body" value="/WEB-INF/jsp/trustreport.jsp" />
+		<put-attribute name="current" value="reports" cascade="true" />
+	</definition>
+
+	<definition name="components" extends="trust">
+		<put-attribute name="body" value="/WEB-INF/jsp/subsidery.jsp" />
+		<put-attribute name="current" value="components"
+			cascade="true" />
+	</definition>
+
+	<!-- trust End -->
+	<!-- Services End -->
+
+	<!-- Common Start -->
+
+	<definition name="common" template="/WEB-INF/layout/classic.jsp">
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
+
+	<!-- STUDENT START -->
+	<definition name="student" extends="common">
+		<put-attribute name="title" value="Student Home" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/layout/sidebar.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+		<put-attribute name="tree" value="student" cascade="true" />
+	</definition>
+
+	<definition name="student/index" extends="student">
+		<put-attribute name="body" value="/WEB-INF/jsp/student/index.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="student/profile" extends="student">
+		<put-attribute name="title" value="Profile" />
+		<put-attribute name="body" value="/WEB-INF/jsp/student/profile.jsp" />
+		<put-attribute name="current" value="profile" cascade="true" />
+	</definition>
+
+	<definition name="student/myMessages" extends="student">
+		<put-attribute name="title" value="Messages" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/myMessages.jsp" />
+		<put-attribute name="current" value="profile" cascade="true" />
+	</definition>
+
+	<definition name="student/applyForNextYear" extends="student">
+		<put-attribute name="title" value="Apply For Next Year" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/applyForNextYear.jsp" />
+		<put-attribute name="current" value="profile" cascade="true" />
+	</definition>
+
+	<definition name="student/additionalDetail" extends="student">
+		<put-attribute name="title" value="Apply For Next Year" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/AdditionDetailForRenewAdmission.jsp" />
+		<put-attribute name="current" value="profile" cascade="true" />
+	</definition>
+
+	<definition name="student/forum" extends="student">
+		<put-attribute name="title" value="Forum" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/forum/forum.jsp" />
+		<put-attribute name="tree" value="forum" cascade="true" />
+		<put-attribute name="current" value="forum" cascade="true" />
+	</definition>
+
+	<definition name="student/forum/home" extends="student">
+		<put-attribute name="title" value="Forum Home" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/forum/forumHome.jsp" />
+		<put-attribute name="tree" value="forum" cascade="true" />
+		<put-attribute name="current" value="forumHome" cascade="true" />
+	</definition>
+
+	<definition name="student/forum/postQuestion" extends="student">
+		<put-attribute name="title" value="Post Question" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/forum/postQuestion.jsp" />
+		<put-attribute name="tree" value="forum" cascade="true" />
+		<put-attribute name="current" value="postQuestion"
+			cascade="true" />
+	</definition>
+
+	<definition name="student/forum/myQuestion" extends="student">
+		<put-attribute name="title" value="My Questions" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/forum/myQuestions.jsp" />
+		<put-attribute name="tree" value="forum" cascade="true" />
+		<put-attribute name="current" value="myQuestion"
+			cascade="true" />
+	</definition>
+
+	<definition name="student/forum/questionPage" extends="student">
+		<put-attribute name="title" value="Question Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/forum/questionDetail.jsp" />
+		<put-attribute name="tree" value="forum" cascade="true" />
+		<put-attribute name="current" value="forum1" cascade="true" />
+	</definition>
+
+	<definition name="student/bookPortal" extends="student">
+		<put-attribute name="title" value="Book Portal" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/bookportal/bookPortal.jsp" />
+		<put-attribute name="tree" value="bookPortal" cascade="true" />
+		<put-attribute name="current" value="bookPortal1"
+			cascade="true" />
+	</definition>
+
+
+	<definition name="student/bookPortalList" extends="student">
+		<put-attribute name="title" value="Book Portal List" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/bookportal/bookPortalList.jsp" />
+		<put-attribute name="tree" value="bookPortal" cascade="true" />
+		<put-attribute name="current" value="bookPortal1"
+			cascade="true" />
+	</definition>
+
+	<definition name="student/addBook" extends="student">
+		<put-attribute name="title" value="Add Book" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/bookportal/addBook.jsp" />
+		<put-attribute name="tree" value="bookPortal" cascade="true" />
+		<put-attribute name="current" value="addBook" cascade="true" />
+	</definition>
+
+	<definition name="student/myBooks" extends="student">
+		<put-attribute name="title" value="My Books" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/bookportal/myBooks.jsp" />
+		<put-attribute name="tree" value="bookPortal" cascade="true" />
+		<put-attribute name="current" value="myBooks" cascade="true" />
+	</definition>
+
+	<definition name="student/detailBook" extends="student">
+		<put-attribute name="title" value="Book Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/bookportal/detailBook.jsp" />
+		<put-attribute name="current" value="bookPortal"
+			cascade="true" />
+	</definition>
+
+	<definition name="student/addRequest" extends="student">
+		<put-attribute name="title" value="Add Request" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/addRequest.jsp" />
+		<put-attribute name="tree" value="request" cascade="true" />
+		<put-attribute name="current" value="addRequest"
+			cascade="true" />
+
+	</definition>
+
+	<definition name="student/viewRequest" extends="student">
+		<put-attribute name="title" value="Add Request" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/rector/viewRequest.jsp" />
+		<put-attribute name="tree" value="request" cascade="true" />
+		<put-attribute name="current" value="viewRequest"
+			cascade="true" />
+
+	</definition>
+
+	<definition name="student/leaveApplication" extends="student">
+		<put-attribute name="title" value="Leave Application" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/leaveApplication.jsp" />
+		<put-attribute name="tree" value="request" cascade="true" />
+		<put-attribute name="current" value="addRequest"
+			cascade="true" />
+
+	</definition>
+
+	<definition name="student/complaint" extends="student">
+		<put-attribute name="title" value="Complaint" />
+		<put-attribute name="body" value="/WEB-INF/jsp/student/complaint.jsp" />
+		<put-attribute name="tree" value="request" cascade="true" />
+		<put-attribute name="current" value="addRequest"
+			cascade="true" />
+
+	</definition>
+
+	<definition name="student/vehicleRegister" extends="student">
+		<put-attribute name="title" value="vehicle Register" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/vehicleRegister.jsp" />
+		<put-attribute name="tree" value="request" cascade="true" />
+		<put-attribute name="current" value="addRequest"
+			cascade="true" />
+
+	</definition>
+
+	<definition name="student/achievement" extends="student">
+		<put-attribute name="title" value="Achivement" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/student/achievement.jsp" />
+		<put-attribute name="tree" value="request" cascade="true" />
+		<put-attribute name="current" value="addRequest"
+			cascade="true" />
+
+	</definition>
+
+	<definition name="student/searchuser/profile" extends="student">
+		<put-attribute name="title" value="User Profile" />
+		<put-attribute name="body" value="/WEB-INF/jsp/userProfile.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+	<!-- STUDENT END -->
+	<!-- ADMIN START -->
+
+	<definition name="admin" extends="common">
+		<put-attribute name="title" value="Admin Home" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/layout/sidebar.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+		<put-attribute name="tree" value="admin" cascade="true" />
+	</definition>
+
+	<definition name="admin/index" extends="admin">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/index.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="admin/addRector" extends="admin">
+		<put-attribute name="title" value="Add Rector" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/addRector.jsp" />
+		<put-attribute name="tree" value="rector" cascade="true" />
+		<put-attribute name="current" value="addRector" cascade="true" />
+	</definition>
+
+	<definition name="admin/viewRectors" extends="admin">
+		<put-attribute name="title" value="All Rectors" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/viewRectors.jsp" />
+		<put-attribute name="tree" value="rector" cascade="true" />
+		<put-attribute name="current" value="viewRectors"
+			cascade="true" />
+	</definition>
+
+	<definition name="admin/rectorEdit" extends="admin">
+		<put-attribute name="title" value="Rector Edit" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/rectorEdit.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="admin/addReport" extends="admin">
+		<put-attribute name="title" value="Add Report" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/addReport.jsp" />
+		<put-attribute name="tree" value="report" cascade="true" />
+		<put-attribute name="current" value="addReport" cascade="true" />
+	</definition>
+
+	<definition name="admin/viewReports" extends="admin">
+		<put-attribute name="title" value="All Reports" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/viewReports.jsp" />
+		<put-attribute name="tree" value="report" cascade="true" />
+		<put-attribute name="current" value="viewReports"
+			cascade="true" />
+	</definition>
+
+	<definition name="admin/viewStudents" extends="admin">
+		<put-attribute name="title" value="All Students" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/viewStudents.jsp" />
+		<put-attribute name="tree" value="student" cascade="true" />
+		<put-attribute name="current" value="viewStudents"
+			cascade="true" />
+	</definition>
+
+	<definition name="admin/profile" extends="admin">
+		<put-attribute name="title" value="Profile" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/profile.jsp" />
+		<put-attribute name="current" value="profile" cascade="true" />
+	</definition>
+
+	<definition name="admin/setAdmissionDetail" extends="admin">
+		<put-attribute name="title" value="Set Admission Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/setAdmissionDetail.jsp" />
+		<put-attribute name="current" value="setAdmissionDetail"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/viewSeatMatrix" extends="admin">
+		<put-attribute name="title" value=" View Seat Matrix" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/viewSeatMatrix.jsp" />
+		<put-attribute name="current" value="viewSeatMatrix"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/viewNewApplications" extends="admin">
+		<put-attribute name="title" value="All Applicants" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/viewNewApplications.jsp" />
+		<put-attribute name="current" value="newApplicant"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/viewStudentApplications" extends="admin">
+		<put-attribute name="title" value="All Student" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/viewStudentApplications.jsp" />
+		<put-attribute name="current" value="oldApplicant"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/confirmAdmission" extends="admin">
+		<put-attribute name="title" value="All Applicants" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/confirmAdmission.jsp" />
+		<put-attribute name="current" value="confirmAdmission"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/renewAdmission" extends="admin">
+		<put-attribute name="title" value="Renew Admission" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/renewAdmission.jsp" />
+		<put-attribute name="current" value="confirmAdmission"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/applicantDetail" extends="admin">
+		<put-attribute name="title" value="Applicant Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/applicantDetail.jsp" />
+		<put-attribute name="current" value="viewApplicants"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/studentDetail" extends="admin">
+		<put-attribute name="title" value="Student Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/studentDetail.jsp" />
+		<put-attribute name="current" value="oldApplicant"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/confirmAdmissionDetail" extends="admin">
+		<put-attribute name="title" value="Applicant Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/confirmAdmissionDetail.jsp" />
+		<put-attribute name="current" value="confirmAdmission"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/confirmStudentAdmissionDetail"
+		extends="admin">
+		<put-attribute name="title" value="Applicant Detail" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/confirmStudentAdmissionDetail.jsp" />
+		<put-attribute name="current" value="oldApplicant"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/cancelAdmissionApplications"
+		extends="admin">
+		<put-attribute name="title" value="All Applicants" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/cancelAdmissionApplications.jsp" />
+		<put-attribute name="current" value="cancelAdmissionApplications"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/cancelAdmission" extends="admin">
+		<put-attribute name="title" value="All Applicants" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/cancelAdmission.jsp" />
+		<put-attribute name="current" value="cancelAdmission"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/cancelAdmissionLetter" extends="admin">
+		<put-attribute name="title" value="All Applicants" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/cancelAdmissionLetter.jsp" />
+		<put-attribute name="current" value="cancelAdmission"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/depositInvoice" extends="admin">
+		<put-attribute name="title" value="All Applicants" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/depositInvoice.jsp" />
+		<put-attribute name="current" value="cancelAdmission"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/successPage" extends="admin">
+		<put-attribute name="title" value="Trustees" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/successPage.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="admin/admissionInvoice" extends="admin">
+		<put-attribute name="title" value="Invoice" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/admissionInvoice.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="admin/studentReceipt" extends="admin">
+		<put-attribute name="title" value="Receipt" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/studentReceipt.jsp" />
+		<put-attribute name="tree" value="receipt" cascade="true" />
+		<put-attribute name="current" value="studentReceipt"
+			cascade="true" />
+	</definition>
+
+	<definition name="admin/viewAllReceipt" extends="admin">
+		<put-attribute name="title" value="Receipt" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/viewAllReceipt.jsp" />
+		<put-attribute name="tree" value="receipt" cascade="true" />
+		<put-attribute name="current" value="viewAllReceipt"
+			cascade="true" />
+	</definition>
+
+	<definition name="admin/receipt" extends="admin">
+		<put-attribute name="title" value="Receipt" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/receipt.jsp" />
+		<put-attribute name="tree" value="receipt" cascade="true" />
+		<put-attribute name="current" value="viewAllReceipt"
+			cascade="true" />
+	</definition>
+
+	<definition name="admin/feedback" extends="admin">
+		<put-attribute name="title" value="feedback" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/feedback.jsp" />
+		<put-attribute name="current" value="feedback" cascade="true" />
+	</definition>
+
+	<definition name="admin/availableSeats" extends="admin">
+		<put-attribute name="title" value="feedback" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/availableSeats.jsp" />
+		<put-attribute name="current" value="setAdmissionDetail"
+			cascade="true" />
+		<put-attribute name="tree" value="admission" cascade="true" />
+	</definition>
+
+	<definition name="admin/getHostel">
+	</definition>
+
+	<!-- ADMIN END -->
+
+
+	<!-- RECTOR START -->
+
+	<definition name="rector" extends="common">
+		<put-attribute name="title" value="Rector Home" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/layout/sidebar.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+		<put-attribute name="tree" value="rector" cascade="true" />
+	</definition>
+
+	<definition name="rector/index" extends="rector">
+		<put-attribute name="title" value="Rector" />
+		<put-attribute name="body" value="/WEB-INF/jsp/rector/index.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="rector/profile" extends="rector">
+		<put-attribute name="title" value="Profile" />
+		<put-attribute name="body" value="/WEB-INF/jsp/rector/profile.jsp" />
+		<put-attribute name="current" value="profile" cascade="true" />
+	</definition>
+
+	<definition name="rector/viewStudents" extends="rector">
+		<put-attribute name="title" value="View Student" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/viewStudents.jsp" />
+		<put-attribute name="current" value="viewStudent"
+			cascade="true" />
+	</definition>
+
+	<definition name="rector/viewRequest" extends="rector">
+		<put-attribute name="title" value="View Request" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/rector/viewRequest.jsp" />
+		<put-attribute name="current" value="viewRequest"
+			cascade="true" />
+	</definition>
+
+
+	<definition name="rector/addActivities" extends="rector">
+		<put-attribute name="title" value="Add Activities" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/rector/addActivities.jsp" />
+		<put-attribute name="current" value="addActivities"
+			cascade="true" />
+		<put-attribute name="tree" value="activities" cascade="true" />
+	</definition>
+
+	<definition name="rector/viewActivities" extends="rector">
+		<put-attribute name="title" value="View Activities" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/rector/viewActivities.jsp" />
+		<put-attribute name="current" value="viewActivities"
+			cascade="true" />
+		<put-attribute name="tree" value="activities" cascade="true" />
+	</definition>
+
+	<!-- RECTOR END -->
+
+	<!-- TRUSTEE START -->
+
+	<definition name="trustee" extends="common">
+		<put-attribute name="title" value="Trustee Home" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/layout/sidebar.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+		<put-attribute name="tree" value="trustee" cascade="true" />
+	</definition>
+
+	<definition name="trustee/index" extends="trustee">
+		<put-attribute name="title" value="Trustee" />
+		<put-attribute name="body" value="/WEB-INF/jsp/trustee/index.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="trustee/profile" extends="trustee">
+		<put-attribute name="title" value="Profile" />
+		<put-attribute name="body" value="/WEB-INF/jsp/trustee/profile.jsp" />
+		<put-attribute name="current" value="profile" cascade="true" />
+	</definition>
+
+	<definition name="trustee/addTrustee" extends="trustee">
+		<put-attribute name="title" value="Add Trustee" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/trustee/addTrustee.jsp" />
+		<put-attribute name="tree" value="trustees" cascade="true" />
+		<put-attribute name="current" value="addTrustee"
+			cascade="true" />
+	</definition>
+
+	<definition name="trustee/viewTrustees" extends="trustee">
+		<put-attribute name="title" value="All Trustees" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/trustee/viewTrustees.jsp" />
+		<put-attribute name="tree" value="trustees" cascade="true" />
+		<put-attribute name="current" value="viewTrustees"
+			cascade="true" />
+	</definition>
+
+	<definition name="trustee/editTrustee" extends="trustee">
+		<put-attribute name="title" value="Trustee Edit" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/trustee/editTrustee.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<definition name="trustee/addAdmin" extends="trustee">
+		<put-attribute name="title" value="Add Admin" />
+		<put-attribute name="body" value="/WEB-INF/jsp/trustee/addAdmin.jsp" />
+		<put-attribute name="tree" value="admins" cascade="true" />
+		<put-attribute name="current" value="addAdmin" cascade="true" />
+	</definition>
+
+	<definition name="trustee/viewAdmins" extends="trustee">
+		<put-attribute name="title" value="All Admins" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/trustee/viewAdmins.jsp" />
+		<put-attribute name="tree" value="admins" cascade="true" />
+		<put-attribute name="current" value="viewAdmins"
+			cascade="true" />
+	</definition>
+
+	<definition name="trustee/viewGirlStudents" extends="admin">
+		<put-attribute name="title" value="View Student" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/viewStudents.jsp" />
+		<put-attribute name="tree" value="student" cascade="true" />
+		<put-attribute name="current" value="viewGirlStudents"
+			cascade="true" />
+	</definition>
+
+	<definition name="trustee/viewBoyStudents" extends="admin">
+		<put-attribute name="title" value="View Student" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/viewStudents.jsp" />
+		<put-attribute name="tree" value="student" cascade="true" />
+		<put-attribute name="current" value="viewBoyStudents"
+			cascade="true" />
+	</definition>
+
+	<definition name="trustee/viewRectors" extends="trustee">
+		<put-attribute name="title" value="All Rectors" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/viewRectors.jsp" />
+		<put-attribute name="current" value="viewRectors"
+			cascade="true" />
+	</definition>
+
+	<definition name="trustee/availableSeats" extends="trustee">
+		<put-attribute name="title" value="profile" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/availableSeats.jsp" />
+		<put-attribute name="current" value="index"
+			cascade="true" />
+	</definition>
+
+
+	<!-- TRUSTEE END -->
+
+	<!-- Commn End -->
+	<!-- Applicant start -->
+	<definition name="basic" template="/WEB-INF/layout/basic.jsp">
+		<put-attribute name="title" value="Applicant Registration" />
+		<put-attribute name="frontEndHead" value="/WEB-INF/layout/includeup.jsp" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/frontEndHeader.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+	</definition>
+
+	<definition name="basicRegister" extends="basic">
+		<put-attribute name="body" value="/WEB-INF/jsp/basicRegister.jsp" />
+	</definition>
+
+	<definition name="advanceRegister" extends="basic">
+		<put-attribute name="body" value="/WEB-INF/jsp/advanceRegister.jsp" />
+	</definition>
+
+	<definition name="advanceRegister2" extends="basic">
+		<put-attribute name="body" value="/WEB-INF/jsp/advanceRegister2.jsp" />
+	</definition>
+
+	<definition name="printAdmissionLetter" extends="basic">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/printAdmissionLetter.jsp" />
+	</definition>
+
+	<definition name="printStudentAdmissionLetter" extends="basic">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/printStudentAdmissionLetter.jsp" />
+	</definition>
+
+	<definition name="checkStatus" extends="basic">
+		<put-attribute name="body" value="/WEB-INF/jsp/checkStatus.jsp" />
+	</definition>
+
+	<definition name="applicationStatus" extends="basic">
+		<put-attribute name="body" value="/WEB-INF/jsp/applicationStatus.jsp" />
+	</definition>
+
+	<definition name="success" extends="basic">
+		<put-attribute name="body" value="/WEB-INF/jsp/success.jsp" />
+	</definition>
+
+	<!-- Applicant End -->
+	<!-- Login Start -->
+
+	<definition name="loginBasic" template="/WEB-INF/layout/loginBasic.jsp">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+	</definition>
+
+	<definition name="login" extends="loginBasic">
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+	</definition>
+	
+	<definition name="forgetPassword" extends="loginBasic">
+	<put-attribute name="title" value="Forget Password" />
+		<put-attribute name="body" value="/WEB-INF/jsp/forgetPassword.jsp" />
+	</definition>
+	
+	<definition name="resetPassword" extends="loginBasic">
+	<put-attribute name="title" value="Forget Password" />
+		<put-attribute name="body" value="/WEB-INF/jsp/resetPassword.jsp" />
+	</definition>
+
+	<!-- Login End -->
+	<definition name="rector/searchuser/profile" extends="rector">
+		<put-attribute name="title" value="User Profile" />
+		<put-attribute name="body" value="/WEB-INF/jsp/userProfile.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+	<definition name="admin/searchuser/profile" extends="admin">
+		<put-attribute name="title" value="User Profile" />
+		<put-attribute name="body" value="/WEB-INF/jsp/userProfile.jsp" />
+		<put-attribute name="current" value="index" cascade="true" />
+	</definition>
+
+	<!-- Error Pages Start -->
+
+	<definition name="400" extends="basic">
+		<put-attribute name="title" value="Bad Request" />
+		<put-attribute name="body" value="/WEB-INF/jsp/400.jsp" />
+	</definition>
+
+	<definition name="401" extends="basic">
+		<put-attribute name="title" value="Login Error" />
+		<put-attribute name="body" value="/WEB-INF/jsp/401.jsp" />
+	</definition>
+
+	<definition name="403" extends="basic">
+		<put-attribute name="title" value="Access Denied" />
+		<put-attribute name="body" value="/WEB-INF/jsp/403.jsp" />
+	</definition>
+
+	<definition name="404" extends="basic">
+		<put-attribute name="title" value="Page Not Found" />
+		<put-attribute name="body" value="/WEB-INF/jsp/404.jsp" />
+	</definition>
+
+	<!-- Error Pages End -->
+	<!-- print -->
+	<definition name="admin/print" template="/WEB-INF/layout/print.jsp">
+		<put-attribute name="title" value="Print" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/invoicePrint.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+	</definition>
+
+	<definition name="admin/printDeposit" template="/WEB-INF/layout/print.jsp">
+		<put-attribute name="title" value="Print" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/depositPrint.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+	</definition>
+
+	<definition name="admin/printCancelAdmissionLetter"
+		template="/WEB-INF/layout/print.jsp">
+		<put-attribute name="title" value="Print" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/admin/cancelAdmissionLetterPrint.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+	</definition>
+
+	<definition name="printFinalAdmissionLetter" template="/WEB-INF/layout/print.jsp">
+		<put-attribute name="title" value="Print" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/printFinalAdmissionLetter.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+	</definition>
+
+	<definition name="printFinalStudentAdmissionLetter"
+		template="/WEB-INF/layout/print.jsp">
+		<put-attribute name="title" value="Print" />
+		<put-attribute name="head" value="/WEB-INF/layout/head.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/printFinalStudentAdmissionLetter.jsp" />
+		<put-attribute name="scripts" value="/WEB-INF/layout/scripts.jsp" />
+	</definition>
+
+</tiles-definitions>
